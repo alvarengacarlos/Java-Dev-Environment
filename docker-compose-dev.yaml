@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  java:
+    container_name: java
+    image: java:8
+    working_dir: /home/java/app/
+    volumes:
+      - ./:/home/java/app
+    
