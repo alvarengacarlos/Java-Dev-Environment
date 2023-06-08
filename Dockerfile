@@ -1,8 +1,8 @@
-FROM ubuntu:jammy
+FROM alpine:3
 
-RUN useradd --create-home --shell /bin/bash --home-dir /home/java --password javapw java
+RUN adduser -D -s /bin/sh -h /home/java java
 RUN chown -R java:java /home/java
-RUN apt update
-RUN apt install -y openjdk-8-jdk
+RUN apk update
+RUN apk add gradle openjdk8
 
 WORKDIR /home/java/
